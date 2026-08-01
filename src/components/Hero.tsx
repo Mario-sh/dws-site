@@ -1,13 +1,16 @@
+
 import { useState, useRef, useEffect } from "react";
 import { ArrowUpRight, MonitorPlay, Star } from "lucide-react";
 import { motion } from "motion/react";
 import BlurText from "./BlurText";
 import workspacePoster from "../assets/images/workspace_website_1785572646973.jpg";
+import cecileAvatar from "../assets/images/temoignage-cecile-goudou.jpg";
 
 const reviews = [
-  { text: `"Site exceptionnel, le travail est de la bombe atomique..."`, author: "Yoan Drahy", avatar: "https://i.pravatar.cc/150?img=11" },
-  { text: `"Un travail remarquable et un professionnalisme exemplaire."`, author: "Marie Dubois", avatar: "https://i.pravatar.cc/150?img=5" },
-  { text: `"Mon nouveau site a explosé mon taux de conversion !"`, author: "Thomas Leroy", avatar: "https://i.pravatar.cc/150?img=33" }
+  { text: `"Un travail d'écoute et de précision. Mon parcours est enfin présenté à la hauteur de ce qu'il représente."`, author: "Cécile Goudou", avatar: cecileAvatar },
+  { text: `"Site exceptionnel, le travail est de la bombe atomique..."`, author: "Yoan Drahy", avatar: "/aviseur1.jpg" },
+  { text: `"Un travail remarquable et un professionnalisme exemplaire."`, author: "Raïssa Zinsou", avatar: "/aviseur4.jpg" },
+  { text: `"Mon nouveau site a explosé mon taux de conversion !"`, author: "Ousmane Ndiaye", avatar: "/aviseur3.jpg" }
 ];
 
 const fadeInUp = {
@@ -50,7 +53,7 @@ export function Hero() {
   };
 
   return (
-    <motion.section 
+    <motion.section
       className="pt-20 pb-12 px-6 max-w-5xl mx-auto text-center relative"
       initial="hidden"
       whileInView="visible"
@@ -74,11 +77,11 @@ export function Hero() {
           className="text-primary italic font-medium justify-center mt-1 sm:mt-2"
         />
       </div>
-      
+
       <motion.p variants={fadeInUp} className="text-gray-400 text-sm sm:text-base md:text-lg mb-8 max-w-xl mx-auto font-light leading-relaxed px-2">
         Chaque jour, des gens vous découvrent en ligne et se font une opinion en quelques secondes. Mon travail : faire en sorte qu'elle soit à la hauteur de ce que vous valez vraiment.
       </motion.p>
-      
+
       <motion.div variants={fadeInUp} className="relative flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10 w-full max-w-[280px] sm:max-w-none mx-auto relative z-20">
         {/* Flèche gauche — guide l'œil vers les CTA */}
         <motion.div
@@ -122,16 +125,15 @@ export function Hero() {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out ${
-                index === currentReviewIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-              }`}
+              className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out ${index === currentReviewIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                }`}
             >
               <p className="text-gray-300 text-sm md:text-base mb-3 text-center">
                 {review.text}
               </p>
               <div className="flex items-center gap-3">
                 <img
-                  className="w-8 h-8 rounded-full object-cover"
+                  className="w-8 h-8 rounded-full object-cover object-top"
                   src={review.avatar}
                   alt={review.author}
                 />
@@ -146,7 +148,7 @@ export function Hero() {
             </div>
           ))}
         </div>
-        
+
         <div className="inline-flex items-center gap-3 px-4 py-2 mt-4 bg-white/5 rounded-full border border-white/10">
           <span className="text-sm font-medium text-white">Avis clients</span>
           <div className="flex items-center gap-1 px-2.5 py-1 bg-white rounded-full">
@@ -172,51 +174,51 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-      <motion.div
-        variants={fadeInUp}
-        className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-video bg-gray-900 cursor-pointer group"
-        onClick={togglePlay}
-      >
-        <video 
-          ref={videoRef}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-50'}`}
-          loop
-          playsInline
-          poster={workspacePoster}
+        <motion.div
+          variants={fadeInUp}
+          className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-video bg-gray-900 cursor-pointer group"
+          onClick={togglePlay}
         >
-          <source src="https://videos.pexels.com/video-files/3163534/3163534-uhd_3840_2160_30fps.mp4" type="video/mp4" />
-          Votre navigateur ne supporte pas la balise vidéo.
-        </video>
-        
-        {!isPlaying && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <div className="relative">
-              {/* Play Button */}
-              <div className="w-16 h-10 md:w-24 md:h-16 bg-primary rounded-xl md:rounded-2xl flex items-center justify-center hover:scale-105 transition-transform shadow-[0_0_30px_rgba(250,204,21,0.4)]">
-                <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-8 md:h-8">
-                  <path d="M6 4L20 12L6 20V4Z" />
-                </svg>
-              </div>
-              
-              {/* Arrow and Text */}
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 md:left-[50%] md:-translate-x-0 pointer-events-none flex flex-col items-center z-10 mb-1 md:mb-2">
-                <span className="font-sans text-[10px] sm:text-xs md:text-3xl font-medium text-white leading-tight drop-shadow-lg text-center whitespace-nowrap">
-                  Clique ici pour<br />regarder la vidéo
-                </span>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4 md:hidden text-white mt-0.5 animate-bounce">
-                  <path d="M12 4L12 20M12 20L6 14M12 20L18 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 md:w-20 md:h-20 hidden md:block md:-ml-16 mt-2 text-white drop-shadow-lg">
-                  <path d="M45 5 Q 20 20 15 50" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="transparent"/>
-                  <path d="M5 40 L 15 50 L 25 40" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="transparent"/>
-                </svg>
+          <video
+            ref={videoRef}
+            className={`w-full h-full object-cover transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-50'}`}
+            loop
+            playsInline
+            poster={workspacePoster}
+          >
+            <source src="https://videos.pexels.com/video-files/3163534/3163534-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+
+          {!isPlaying && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+              <div className="relative">
+                {/* Play Button */}
+                <div className="w-16 h-10 md:w-24 md:h-16 bg-primary rounded-xl md:rounded-2xl flex items-center justify-center hover:scale-105 transition-transform shadow-[0_0_30px_rgba(250,204,21,0.4)]">
+                  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-8 md:h-8">
+                    <path d="M6 4L20 12L6 20V4Z" />
+                  </svg>
+                </div>
+
+                {/* Arrow and Text */}
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 md:left-[50%] md:-translate-x-0 pointer-events-none flex flex-col items-center z-10 mb-1 md:mb-2">
+                  <span className="font-sans text-[10px] sm:text-xs md:text-3xl font-medium text-white leading-tight drop-shadow-lg text-center whitespace-nowrap">
+                    Clique ici pour<br />regarder la vidéo
+                  </span>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4 md:hidden text-white mt-0.5 animate-bounce">
+                    <path d="M12 4L12 20M12 20L6 14M12 20L18 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 md:w-20 md:h-20 hidden md:block md:-ml-16 mt-2 text-white drop-shadow-lg">
+                    <path d="M45 5 Q 20 20 15 50" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="transparent" />
+                    <path d="M5 40 L 15 50 L 25 40" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="transparent" />
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
-        )}
-        
-        <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 pointer-events-none"></div>
-      </motion.div>
+          )}
+
+          <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 pointer-events-none"></div>
+        </motion.div>
       </div>
     </motion.section>
   );
