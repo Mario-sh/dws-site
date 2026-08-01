@@ -35,6 +35,13 @@ export function About() {
             {/* Remplacez ce src par le chemin de la photo que vous uploadez via l'explorateur de fichiers */}
             <img 
               src={maPhoto} 
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.dataset.fallback) {
+                  target.dataset.fallback = 'true';
+                  target.src = '/maphoto.jpeg';
+                }
+              }}
               alt="Dylane - Web Designer" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
