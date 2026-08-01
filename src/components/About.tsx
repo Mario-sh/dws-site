@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
 import dylanePhoto from "../assets/images/dylane_mon_approche.jpeg";
+import { CheckCircle2 } from "lucide-react";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
 };
 
 const staggerContainer = {
@@ -11,7 +12,7 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.12
     }
   }
 };
@@ -19,50 +20,72 @@ const staggerContainer = {
 export function About() {
   return (
     <motion.section 
-      className="py-20 px-6 max-w-7xl mx-auto" id="a-propos"
+      className="py-14 md:py-18 px-4 md:px-6 max-w-5xl mx-auto" 
+      id="a-propos"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={staggerContainer}
     >
-      <div className="flex flex-col lg:flex-row gap-12 items-center bg-bg-card rounded-3xl p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
+      <div className="bg-bg-card/80 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 shadow-xl relative overflow-hidden">
         
-        {/* Decorative background element */}
-        <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        {/* Subtle background glow */}
+        <div className="absolute -top-20 -right-20 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
         
-        <div className="lg:w-1/3 relative z-10">
-          <motion.div variants={fadeInUp} className="mb-8 rounded-2xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-2xl border border-white/10 relative group">
-            {/* Remplacez ce src par le chemin de la photo que vous uploadez via l'explorateur de fichiers */}
-            <img 
-              src={dylanePhoto} 
-              onError={(e) => {
-                const target = e.currentTarget;
-                if (!target.dataset.fallback) {
-                  target.dataset.fallback = 'true';
-                  target.src = '/dylane_mon_approche.jpeg';
-                }
-              }}
-              alt="Dylane - Web Designer" 
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 to-transparent opacity-60"></div>
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10 relative z-10">
+          
+          {/* Photo Column - Compact & Refined */}
+          <motion.div variants={fadeInUp} className="shrink-0 relative group">
+            <div className="w-44 h-56 sm:w-48 sm:h-60 rounded-xl overflow-hidden border border-white/15 shadow-lg relative bg-bg-dark">
+              <img 
+                src={dylanePhoto} 
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.dataset.fallback) {
+                    target.dataset.fallback = 'true';
+                    target.src = '/dylane_mon_approche.jpeg';
+                  }
+                }}
+                alt="Dylane - Web Designer" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/75 via-transparent to-transparent"></div>
+            </div>
           </motion.div>
-          <motion.h2 variants={fadeInUp} className="font-serif text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            Mon approche
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="text-gray-400 font-medium text-lg">
-            Transformer votre expertise en une expérience digitale mémorable.
-          </motion.p>
-        </div>
-        
-        <div className="lg:w-2/3 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-12 relative z-10">
-          <motion.svg variants={fadeInUp} className="w-10 h-10 text-primary/40 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-          </motion.svg>
-          <motion.p variants={fadeInUp} className="text-gray-300 text-lg md:text-xl leading-relaxed font-light italic">
-            J'accompagne les professionnels, comme les coachs, consultants, créateurs de contenu, auteurs ou autres experts, dans la création d'une présence en ligne qui reflète leur valeur. Je conçois des sites web modernes, rapides et élégants qui racontent leur histoire, mettent en avant leur expertise et donnent confiance dès les premières secondes. L'idée est que lorsqu'une personne visite leur site, elle comprenne immédiatement qui ils sont, ce qu'ils font et pourquoi ils méritent son attention.
-          </motion.p>
+          
+          {/* Content Column - Airy & Legible */}
+          <div className="flex-1 text-left">
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary border border-primary/20 mb-3">
+              <span>Mon Approche</span>
+            </motion.div>
+            
+            <motion.h2 variants={fadeInUp} className="font-serif text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-white leading-snug">
+              Les gens ne choisissent pas toujours le meilleur professionnel. Ils choisissent celui qui leur inspire le plus confiance.
+            </motion.h2>
+            
+            <motion.p variants={fadeInUp} className="text-gray-300 text-sm md:text-base leading-relaxed mb-5 font-normal">
+              Votre site web joue un rôle essentiel dans cette première impression. Je conçois des expériences web qui mettent en valeur votre expertise, rassurent vos visiteurs et vous aident à laisser une empreinte durable.
+            </motion.p>
+            
+            {/* Mini Pillars */}
+            <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
+              <div className="flex items-center gap-2 text-xs text-gray-300 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                <span>Design Sur-Mesure</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-gray-300 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                <span>Expérience Fluide</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-gray-300 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                <span>Haute Conversion</span>
+              </div>
+            </motion.div>
+          </div>
+          
         </div>
       </div>
     </motion.section>
