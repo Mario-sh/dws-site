@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import dylanePhoto from "../assets/images/dylane.jpeg";
 import maPhoto from "../assets/images/maphoto.jpeg";
 
 const fadeInUp = {
@@ -34,11 +35,17 @@ export function About() {
           <motion.div variants={fadeInUp} className="mb-8 rounded-2xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-2xl border border-white/10 relative group">
             {/* Remplacez ce src par le chemin de la photo que vous uploadez via l'explorateur de fichiers */}
             <img 
-              src={maPhoto} 
+              src={dylanePhoto} 
               onError={(e) => {
                 const target = e.currentTarget;
-                if (!target.dataset.fallback) {
-                  target.dataset.fallback = 'true';
+                if (!target.dataset.fallbackCount) {
+                  target.dataset.fallbackCount = '1';
+                  target.src = '/dylane.jpeg';
+                } else if (target.dataset.fallbackCount === '1') {
+                  target.dataset.fallbackCount = '2';
+                  target.src = maPhoto;
+                } else if (target.dataset.fallbackCount === '2') {
+                  target.dataset.fallbackCount = '3';
                   target.src = '/maphoto.jpeg';
                 }
               }}
