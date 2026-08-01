@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
+import cecileAvatar from "../assets/images/temoignage-cecile-goudou.jpg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,26 +17,22 @@ const staggerContainer = {
   }
 };
 
+// ⚠️ Citation rédigée à partir du projet réel — à faire valider par la cliente avant mise en ligne.
 const testimonials = [
   {
-    quote: "Site exceptionnel, le travail est de la bombe atomique. Dylane a su capter exactement l'univers que je voulais pour ma marque.",
-    author: "Yoan Drahy",
-    role: "Entrepreneur e-commerce",
-    avatar: "https://i.pravatar.cc/150?img=11"
-  },
-  {
-    quote: "Un travail remarquable et un professionnalisme exemplaire. Je savais où on en était à chaque étape, sans jamais avoir à gérer la technique.",
-    author: "Marie Dubois",
-    role: "Consultante indépendante",
-    avatar: "https://i.pravatar.cc/150?img=5"
-  },
-  {
-    quote: "Mon nouveau site a explosé mon taux de conversion ! Mes prospects arrivent au premier appel déjà convaincus.",
-    author: "Thomas Leroy",
-    role: "Coach business",
-    avatar: "https://i.pravatar.cc/150?img=33"
+    quote: "Dylane a rassemblé quinze ans de carrière, d'engagements et de distinctions en une vitrine qui me ressemble. Sobre, élégante, professionnelle — exactement l'image que je voulais donner. Aujourd'hui, je n'ai plus qu'un lien à partager.",
+    author: "Cécile Goudou",
+    role: "Journaliste · France Médias Monde",
+    avatar: cecileAvatar
   }
 ];
+
+const gridClass =
+  testimonials.length >= 3
+    ? "grid grid-cols-1 md:grid-cols-3 gap-6"
+    : testimonials.length === 2
+      ? "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+      : "grid grid-cols-1 max-w-3xl mx-auto";
 
 export function Testimonials() {
   return (
@@ -60,54 +57,44 @@ export function Testimonials() {
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className={gridClass}>
         {testimonials.map((testimonial) => (
           <motion.figure
             key={testimonial.author}
             variants={fadeInUp}
-            className="group relative bg-bg-card border border-white/5 rounded-2xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
+            className="group relative bg-bg-card border border-white/5 rounded-2xl p-8 md:p-12 text-center transition-all duration-300 hover:border-primary/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
           >
-            <div className="font-serif text-6xl leading-[0.5] text-primary/25 select-none pointer-events-none mb-5" aria-hidden="true">
+            <div className="font-serif text-6xl leading-[0.5] text-primary/25 select-none pointer-events-none mb-6" aria-hidden="true">
               "
             </div>
 
-            <div className="flex gap-1 mb-5">
+            <div className="flex justify-center gap-1 mb-6">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-primary text-primary" />
               ))}
             </div>
 
-            <blockquote className="text-gray-300 text-sm md:text-base leading-relaxed font-light flex-grow">
+            <blockquote className="text-gray-200 text-base md:text-lg lg:text-xl leading-relaxed font-light mb-8 max-w-2xl mx-auto">
               {testimonial.quote}
             </blockquote>
 
-            <figcaption className="flex items-center gap-4 mt-8 pt-6 border-t border-white/5">
+            <figcaption className="flex flex-col items-center gap-4 pt-8 border-t border-white/5">
               <img
                 src={testimonial.avatar}
                 alt={testimonial.author}
                 loading="lazy"
-                className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/30 group-hover:ring-primary/60 transition-all"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover object-top ring-2 ring-primary/30 group-hover:ring-primary/60 transition-all"
               />
               <div>
-                <div className="font-signature text-2xl text-white leading-none">
+                <div className="font-signature text-3xl text-white leading-none">
                   {testimonial.author}
                 </div>
-                <div className="text-gray-500 text-sm mt-1.5">{testimonial.role}</div>
+                <div className="text-gray-500 text-sm mt-2">{testimonial.role}</div>
               </div>
             </figcaption>
           </motion.figure>
         ))}
       </div>
-
-      <motion.div variants={fadeInUp} className="flex justify-center mt-12">
-        <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full border border-white/10">
-          <span className="text-sm font-medium text-white">Note moyenne</span>
-          <div className="flex items-center gap-1 px-2.5 py-1 bg-white rounded-full">
-            <Star className="w-3.5 h-3.5 fill-black text-black" />
-            <span className="text-sm font-bold text-black leading-none">4.9</span>
-          </div>
-        </div>
-      </motion.div>
     </motion.section>
   );
 }

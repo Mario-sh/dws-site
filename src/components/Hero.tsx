@@ -85,10 +85,10 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8, rotate: -18 }}
           animate={{ opacity: 1, scale: 1, rotate: -10 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" as const }}
-          className="hidden lg:block absolute -left-6 xl:-left-24 -top-28 xl:-top-32 pointer-events-none select-none"
+          className="hidden lg:block absolute left-[calc(50%-380px)] -top-32 xl:-top-36 pointer-events-none select-none"
         >
           <motion.div animate={{ y: [0, -6, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-            <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 xl:w-32 xl:h-32 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
+            <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32 xl:w-40 xl:h-40 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
               <path d="M 40 20 C 25 60 20 100 60 115 C 95 128 110 92 92 64 C 74 36 56 70 80 100 C 100 126 135 138 160 146" fill="none" stroke="currentColor" strokeWidth="5.5" strokeDasharray="9 7" strokeLinecap="round" />
               <polygon points="155,130 178,150 148,153" fill="currentColor" />
             </svg>
@@ -162,10 +162,10 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8, rotate: 18 }}
           animate={{ opacity: 1, scale: 1, rotate: 10 }}
           transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" as const }}
-          className="hidden lg:block absolute -right-10 xl:-right-28 -top-16 xl:-top-20 z-10 pointer-events-none select-none"
+          className="hidden lg:block absolute -right-14 xl:-right-20 -top-24 xl:-top-28 z-10 pointer-events-none select-none"
         >
           <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-            <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 xl:w-32 xl:h-32 -scale-x-100 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
+            <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32 xl:w-40 xl:h-40 -scale-x-100 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
               <path d="M 40 20 C 25 60 20 100 60 115 C 95 128 110 92 92 64 C 74 36 56 70 80 100 C 100 126 135 138 160 146" fill="none" stroke="currentColor" strokeWidth="5.5" strokeDasharray="9 7" strokeLinecap="round" />
               <polygon points="155,130 178,150 148,153" fill="currentColor" />
             </svg>
