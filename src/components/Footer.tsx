@@ -22,7 +22,14 @@ export function Footer() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16"
         >
           <motion.div variants={fadeInUp} className="lg:col-span-2">
-            <span className="font-serif text-3xl font-bold tracking-tight text-primary mb-6 inline-block">DylaneWebStudio</span>
+            <a href="/#" className="flex flex-col mb-6 group leading-none w-fit">
+              <span className="font-signature text-4xl font-bold text-primary tracking-wide transition-colors group-hover:text-amber-300">
+                Dylane
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400 mt-1">
+                Web Studio
+              </span>
+            </a>
             <p className="text-gray-400 text-base leading-relaxed max-w-sm mb-8 font-light">
               Je conçois des sites web professionnels sur-mesure pour les indépendants et les entreprises qui souhaitent se démarquer.
             </p>
