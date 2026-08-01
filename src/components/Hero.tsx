@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { ArrowUpRight, MonitorPlay, Star } from "lucide-react";
 import { motion } from "motion/react";
 import BlurText from "./BlurText";
+import workspacePoster from "../assets/images/workspace_website_1785572646973.jpg";
 
 const reviews = [
   { text: `"Site exceptionnel, le travail est de la bombe atomique..."`, author: "Yoan Drahy", avatar: "https://i.pravatar.cc/150?img=11" },
@@ -173,7 +174,7 @@ export function Hero() {
           className={`w-full h-full object-cover transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-50'}`}
           loop
           playsInline
-          poster="/src/assets/images/workspace_website_1785572646973.jpg"
+          poster={workspacePoster}
         >
           <source src="https://videos.pexels.com/video-files/3163534/3163534-uhd_3840_2160_30fps.mp4" type="video/mp4" />
           Votre navigateur ne supporte pas la balise vidéo.

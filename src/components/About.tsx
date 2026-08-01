@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import maPhoto from "../assets/images/maphoto.jpeg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -33,7 +34,7 @@ export function About() {
           <motion.div variants={fadeInUp} className="mb-8 rounded-2xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-2xl border border-white/10 relative group">
             {/* Remplacez ce src par le chemin de la photo que vous uploadez via l'explorateur de fichiers */}
             <img 
-              src="/src/assets/images/maphoto.jpeg" 
+              src={maPhoto} 
               alt="Dylane - Web Designer" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
