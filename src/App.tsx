@@ -13,6 +13,9 @@ import { WhatsAppButton } from "./components/WhatsAppButton";
 import { Footer } from "./components/Footer";
 import { LegalMentions } from "./pages/LegalMentions";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { Realisations } from "./pages/Realisations";
+import { NotFound } from "./pages/NotFound";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 function Home() {
   return (
@@ -33,13 +36,16 @@ function Home() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-grid flex flex-col">
         <Navbar />
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/realisations" element={<Realisations />} />
             <Route path="/mentions-legales" element={<LegalMentions />} />
             <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
