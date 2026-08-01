@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import dylanePortrait from "../assets/images/dylane_portrait_1785583091586.jpg";
+import dylanePhoto from "../assets/images/dylane_mon_approche.jpeg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,12 +34,12 @@ export function About() {
           <motion.div variants={fadeInUp} className="mb-8 rounded-2xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-2xl border border-white/10 relative group">
             {/* Remplacez ce src par le chemin de la photo que vous uploadez via l'explorateur de fichiers */}
             <img 
-              src={dylanePortrait} 
+              src={dylanePhoto} 
               onError={(e) => {
                 const target = e.currentTarget;
                 if (!target.dataset.fallback) {
                   target.dataset.fallback = 'true';
-                  target.src = '/dylane_portrait.jpg';
+                  target.src = '/dylane_mon_approche.jpeg';
                 }
               }}
               alt="Dylane - Web Designer" 
