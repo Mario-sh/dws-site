@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88" />
+      <stop offset="100%" stop-color="#00cc66" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="100" height="100" rx="28" fill="#0b0f19" />
+  <rect x="2" y="2" width="96" height="96" rx="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+  <!-- D monogram styling with gradient & code brackets feel -->
+  <path d="M 32 25 L 55 25 C 72 25, 78 35, 78 50 C 78 65, 72 75, 55 75 L 32 75 Z" fill="none" stroke="url(#primaryGrad)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" />
+  <path d="M 46 38 L 46 62" stroke="#00ff88" stroke-width="7" stroke-linecap="round" />
+  <circle cx="60" cy="50" r="4" fill="#ffffff" />
+</svg>
