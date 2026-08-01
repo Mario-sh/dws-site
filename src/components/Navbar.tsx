@@ -21,6 +21,7 @@ export function Navbar() {
           <a href="/#" className="hover:text-primary transition-colors">Accueil</a>
           <a href="/#a-propos" className="hover:text-primary transition-colors">Mon approche</a>
           <a href="/#services" className="hover:text-primary transition-colors">Services</a>
+          <a href="/#processus" className="hover:text-primary transition-colors">Processus</a>
           <a href="/#realisations" className="hover:text-primary transition-colors">Réalisations</a>
         </nav>
         
@@ -50,6 +51,7 @@ export function Navbar() {
           <a href="/#" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Accueil</a>
           <a href="/#a-propos" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Mon approche</a>
           <a href="/#services" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Services</a>
+          <a href="/#processus" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Processus</a>
           <a href="/#realisations" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Réalisations</a>
           <div className="pt-4 pb-2">
             <a href="https://wa.me/2290194118320?text=Bonjour%20je%20vous%20contacte%20depuis%20votre%20site.%20J'aimerais%20en%20savoir%20plus" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex justify-center items-center w-full px-5 py-3 text-sm font-semibold text-black bg-primary rounded-full hover:bg-primary-hover transition-colors" onClick={() => setIsOpen(false)}>

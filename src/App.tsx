@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero";
 import { Logos } from "./components/Logos";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
+import { Process } from "./components/Process";
 import { Portfolio } from "./components/Portfolio";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { Footer } from "./components/Footer";
@@ -17,6 +18,7 @@ function Home() {
       <Logos />
       <About />
       <Services />
+      <Process />
       <Portfolio />
     </main>
   );

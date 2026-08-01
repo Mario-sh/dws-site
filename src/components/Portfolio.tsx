@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronUp, ChevronDown, ChevronRight, Layout, MonitorPlay, Sparkles, ChevronLeft, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -43,6 +43,9 @@ const staggerContainer = {
 
 export function Portfolio() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const nextProject = () => {
     setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
@@ -50,6 +53,12 @@ export function Portfolio() {
 
   const prevProject = () => {
     setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
   const project = projects[currentIndex];
@@ -76,17 +85,38 @@ export function Portfolio() {
       <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
         {/* Image (Left) */}
         <motion.div variants={fadeInUp} className="w-full lg:w-[55%] xl:w-[60%]">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-bg-card aspect-[16/10] group">
+          <div 
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            onClick={nextProject}
+            className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-bg-card aspect-[16/10] group cursor-none"
+          >
+            {/* Custom Cursor */}
+            <motion.div 
+              className="absolute z-50 flex items-center justify-center w-20 h-20 rounded-full bg-primary text-black font-semibold uppercase tracking-wider text-xs pointer-events-none shadow-lg"
+              animate={{ 
+                x: cursorPos.x - 40, 
+                y: cursorPos.y - 40,
+                scale: isHovering ? 1 : 0,
+                opacity: isHovering ? 0.9 : 0
+              }}
+              transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+            >
+              Suivant
+            </motion.div>
+
             <AnimatePresence mode="wait">
               <motion.img 
                 key={project.id}
                 src={project.image} 
                 alt={project.title} 
                 className="w-full h-full object-cover"
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, x: 100, scale: 1.1 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: -100, scale: 0.95 }}
+                transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
               />
             </AnimatePresence>
           </div>

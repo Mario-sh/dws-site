@@ -51,13 +51,43 @@ export function Hero() {
 
   return (
     <motion.section 
-      className="pt-20 pb-12 px-6 max-w-5xl mx-auto text-center"
+      className="pt-20 pb-12 px-6 max-w-5xl mx-auto text-center relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={staggerContainer}
     >
-      <div className="font-serif text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 flex flex-col items-center">
+      {/* Top Left Coiled Arrow */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8, rotate: -6 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        className="hidden lg:flex absolute -left-12 xl:-left-24 top-20 pointer-events-none select-none z-10"
+      >
+        <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
+          <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32 xl:w-40 xl:h-40 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
+            <path d="M 40 20 C 25 60 20 100 60 115 C 95 128 110 92 92 64 C 74 36 56 70 80 100 C 100 126 135 138 160 146" fill="none" stroke="currentColor" strokeWidth="5.5" strokeDasharray="9 7" strokeLinecap="round" />
+            <polygon points="155,130 178,150 148,153" fill="currentColor" />
+          </svg>
+        </motion.div>
+      </motion.div>
+
+      {/* Bottom Right Coiled Arrow */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8, rotate: 174 }}
+        animate={{ opacity: 1, scale: 1, rotate: 180 }}
+        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        className="hidden lg:flex absolute -right-12 xl:-right-24 top-[50%] pointer-events-none select-none z-10"
+      >
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
+          <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32 xl:w-40 xl:h-40 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
+            <path d="M 40 20 C 25 60 20 100 60 115 C 95 128 110 92 92 64 C 74 36 56 70 80 100 C 100 126 135 138 160 146" fill="none" stroke="currentColor" strokeWidth="5.5" strokeDasharray="9 7" strokeLinecap="round" />
+            <polygon points="155,130 178,150 148,153" fill="currentColor" />
+          </svg>
+        </motion.div>
+      </motion.div>
+
+      <div className="font-serif text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 flex flex-col items-center relative z-20">
         <BlurText
           text="Donnez à votre expertise"
           delay={60}
@@ -79,30 +109,7 @@ export function Hero() {
         Je conçois des sites web professionnels sur-mesure pour les indépendants et les entreprises qui souhaitent se démarquer et attirer plus de clients.
       </motion.p>
       
-      <motion.div variants={fadeInUp} className="relative flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10 w-full max-w-[280px] sm:max-w-none mx-auto">
-        {/* Yellow dashed loop arrow - PC version only, larger scale */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8, rotate: -6 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="hidden lg:flex absolute -left-36 xl:-left-44 -top-24 pointer-events-none select-none z-10"
-        >
-          <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-44 h-44 xl:w-52 xl:h-52 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
-            <path
-              d="M 40 20 C 25 60 20 100 60 115 C 95 128 110 92 92 64 C 74 36 56 70 80 100 C 100 126 135 138 160 146"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="5.5"
-              strokeDasharray="9 7"
-              strokeLinecap="round"
-            />
-            <polygon
-              points="155,130 178,150 148,153"
-              fill="currentColor"
-            />
-          </svg>
-        </motion.div>
-
+      <motion.div variants={fadeInUp} className="relative flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10 w-full max-w-[280px] sm:max-w-none mx-auto relative z-20">
         <a href="https://wa.me/2290194118320?text=Bonjour%20je%20vous%20contacte%20depuis%20votre%20site.%20J'aimerais%20r%C3%A9server%20un%20appel" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex justify-center items-center w-full sm:w-auto px-6 py-3.5 text-sm md:text-base font-semibold text-white bg-[#2A2A2A] rounded-full hover:bg-gray-800 transition-colors shadow-lg shadow-black/20">
           <span className="flex items-center gap-2 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">
             Réserver un appel
