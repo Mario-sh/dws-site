@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import dylanePhoto from "../assets/images/dylane_mon_approche.jpeg";
-import { CheckCircle2 } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -57,33 +56,13 @@ export function About() {
           
           {/* Content Column - Airy & Legible */}
           <div className="flex-1 text-left">
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary border border-primary/20 mb-3">
-              <span>Mon Approche</span>
-            </motion.div>
-            
             <motion.h2 variants={fadeInUp} className="font-serif text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-white leading-snug">
               Les gens ne choisissent pas toujours le meilleur professionnel. Ils choisissent celui qui leur inspire le plus confiance.
             </motion.h2>
             
-            <motion.p variants={fadeInUp} className="text-gray-300 text-sm md:text-base leading-relaxed mb-5 font-normal">
+            <motion.p variants={fadeInUp} className="text-gray-300 text-sm md:text-base leading-relaxed font-normal">
               Votre site web joue un rôle essentiel dans cette première impression. Je conçois des expériences web qui mettent en valeur votre expertise, rassurent vos visiteurs et vous aident à laisser une empreinte durable.
             </motion.p>
-            
-            {/* Mini Pillars */}
-            <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
-              <div className="flex items-center gap-2 text-xs text-gray-300 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                <span>Design Sur-Mesure</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-gray-300 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                <span>Expérience Fluide</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-gray-300 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                <span>Haute Conversion</span>
-              </div>
-            </motion.div>
           </div>
           
         </div>
