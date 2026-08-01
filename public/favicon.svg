@@ -1,18 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
-    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00ff88" />
-      <stop offset="100%" stop-color="#00cc66" />
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066" />
+      <stop offset="50%" stop-color="#FACC15" />
+      <stop offset="100%" stop-color="#D97706" />
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComponentTransfer in="blur" result="glow">
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
-  <rect width="100" height="100" rx="28" fill="#0b0f19" />
-  <rect x="2" y="2" width="96" height="96" rx="26" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
-  <!-- D monogram styling with gradient & code brackets feel -->
-  <path d="M 32 25 L 55 25 C 72 25, 78 35, 78 50 C 78 65, 72 75, 55 75 L 32 75 Z" fill="none" stroke="url(#primaryGrad)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" />
-  <path d="M 46 38 L 46 62" stroke="#00ff88" stroke-width="7" stroke-linecap="round" />
-  <circle cx="60" cy="50" r="4" fill="#ffffff" />
+
+  <!-- Background Card -->
+  <rect width="512" height="512" rx="128" fill="url(#darkBg)"/>
+  <rect x="12" y="12" width="488" height="488" rx="116" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-opacity="0.35"/>
+
+  <!-- Subtle glow aura -->
+  <path d="M 160 120 L 275 120 C 375 120, 425 180, 425 256 C 425 332, 375 392, 275 392 L 160 392 Z" fill="none" stroke="url(#goldGrad)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" opacity="0.2" filter="url(#softGlow)" />
+
+  <!-- Luxury Monogram "D" -->
+  <!-- Vertical Left Stem with Refined Serifs -->
+  <path d="
+    M 125 130 L 215 130 L 215 158 L 192 158 L 192 354 L 215 354 L 215 382 L 125 382 L 125 354 L 148 354 L 148 158 L 125 158 Z
+  " fill="url(#goldGrad)" />
+
+  <!-- Smooth Bowl Curve -->
+  <path d="
+    M 175 130
+    L 280 130
+    C 375 130, 425 182, 425 256
+    C 425 330, 375 382, 280 382
+    L 175 382
+    L 175 342
+    L 270 342
+    C 342 342, 375 304, 375 256
+    C 375 208, 342 170, 270 170
+    L 175 170
+    Z
+  " fill="url(#goldGrad)" />
+
+  <!-- Decorative Spark / Star Accent -->
+  <path d="M 395 125 Q 395 148 418 148 Q 395 148 395 171 Q 395 148 372 148 Q 395 148 395 125 Z" fill="#FFE066" opacity="0.95" />
 </svg>

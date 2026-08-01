@@ -7,7 +7,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-bg-dark/80 backdrop-blur-md">
       <div className="flex items-center justify-between py-4 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
+          <img src="/favicon.svg" alt="DylaneWebStudio Logo" className="w-8 h-8 rounded-lg shadow-[0_0_10px_rgba(250,204,21,0.2)]" />
           <span className="font-serif text-2xl font-bold text-primary tracking-tight">DylaneWebStudio</span>
         </div>
         
