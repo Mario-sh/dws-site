@@ -82,15 +82,15 @@ export function Hero() {
       <motion.div variants={fadeInUp} className="relative flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10 w-full max-w-[280px] sm:max-w-none mx-auto relative z-20">
         {/* Flèche gauche — guide l'œil vers les CTA */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -18 }}
-          animate={{ opacity: 1, scale: 1, rotate: -10 }}
+          initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" as const }}
-          className="hidden lg:block absolute left-[calc(50%-380px)] -top-32 xl:-top-36 pointer-events-none select-none"
+          className="hidden lg:block absolute left-[calc(50%-370px)] -top-24 xl:-top-28 pointer-events-none select-none"
         >
           <motion.div animate={{ y: [0, -6, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-            <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32 xl:w-40 xl:h-40 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
-              <path d="M 40 20 C 25 60 20 100 60 115 C 95 128 110 92 92 64 C 74 36 56 70 80 100 C 100 126 135 138 160 146" fill="none" stroke="currentColor" strokeWidth="5.5" strokeDasharray="9 7" strokeLinecap="round" />
-              <polygon points="155,130 178,150 148,153" fill="currentColor" />
+            <svg viewBox="0 0 200 170" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 xl:w-44 h-auto text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
+              <path d="M 30 10 C 8 55 14 105 54 132 C 82 150 116 149 146 158" fill="none" stroke="currentColor" strokeWidth="5" strokeDasharray="10 8" strokeLinecap="round" />
+              <polygon points="165,165 141,168 148,146" fill="currentColor" />
             </svg>
           </motion.div>
         </motion.div>
@@ -159,15 +159,15 @@ export function Hero() {
       <div className="relative max-w-4xl mx-auto">
         {/* Flèche droite — guide l'œil vers la vidéo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: 18 }}
-          animate={{ opacity: 1, scale: 1, rotate: 10 }}
+          initial={{ opacity: 0, scale: 0.8, rotate: 8 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" as const }}
           className="hidden lg:block absolute -right-14 xl:-right-20 -top-24 xl:-top-28 z-10 pointer-events-none select-none"
         >
           <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-            <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32 xl:w-40 xl:h-40 -scale-x-100 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
-              <path d="M 40 20 C 25 60 20 100 60 115 C 95 128 110 92 92 64 C 74 36 56 70 80 100 C 100 126 135 138 160 146" fill="none" stroke="currentColor" strokeWidth="5.5" strokeDasharray="9 7" strokeLinecap="round" />
-              <polygon points="155,130 178,150 148,153" fill="currentColor" />
+            <svg viewBox="0 0 200 170" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-36 xl:w-44 h-auto -scale-x-100 text-primary filter drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]">
+              <path d="M 30 10 C 8 55 14 105 54 132 C 82 150 116 149 146 158" fill="none" stroke="currentColor" strokeWidth="5" strokeDasharray="10 8" strokeLinecap="round" />
+              <polygon points="165,165 141,168 148,146" fill="currentColor" />
             </svg>
           </motion.div>
         </motion.div>
