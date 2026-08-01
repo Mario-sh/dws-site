@@ -23,7 +23,7 @@ export function Logos() {
   return (
     <section className="pt-8 pb-16 overflow-hidden px-4">
       <div className="text-center mb-8 text-sm text-gray-400 font-medium tracking-wide uppercase">
-        Ils m'ont fait confiance
+        Ils m'ont confié leur image
       </div>
       
       <div className="w-full max-w-6xl mx-auto bg-primary py-4 md:py-5 flex overflow-hidden rounded-2xl md:rounded-full shadow-[0_0_40px_rgba(250,204,21,0.15)] relative">

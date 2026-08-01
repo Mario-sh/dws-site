@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
 };
 
 const staggerContainer = {
@@ -35,12 +35,12 @@ export function About() {
         {/* Text Side - More Airy */}
         <div className="flex-1 text-left order-2 md:order-1 relative z-10">
           <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-[1.15] tracking-tight">
-            Les gens ne choisissent pas toujours le <span className="text-primary italic font-normal">meilleur professionnel.</span><br />
-            Ils choisissent celui qui leur inspire le plus confiance.
+            On ne choisit pas toujours le <span className="text-primary italic font-normal">meilleur professionnel.</span><br />
+            On choisit celui qui inspire le plus confiance.
           </motion.h2>
           
           <motion.p variants={fadeInUp} className="text-gray-400 text-base md:text-lg lg:text-xl leading-relaxed font-light max-w-2xl">
-            Votre site web joue un rôle essentiel dans cette première impression. Je conçois des expériences web qui mettent en valeur votre expertise, rassurent vos visiteurs et vous aident à laisser une empreinte durable.
+            Votre site est souvent ce tout premier contact. Je le conçois pour qu'il dise, sans un mot, ce que vos clients mettent des mois à découvrir : qu'on peut compter sur vous.
           </motion.p>
         </div>
 

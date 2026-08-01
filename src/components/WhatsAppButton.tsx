@@ -18,7 +18,7 @@ export function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/2290194118320?text=Bonjour%20je%20vous%20contacte%20depuis%20votre%20site.%20J'aimerais%20en%20savoir%20plus"
+      href="https://wa.me/2290194118320?text=Bonjour%20Dylane%2C%20je%20viens%20de%20voir%20votre%20site%20et%20j'aimerais%20%C3%A9changer%20sur%20mon%20image%20en%20ligne."
       target="_blank"
       rel="noopener noreferrer"
       className={`fixed bottom-6 right-6 z-50 p-3.5 bg-primary rounded-full shadow-[0_0_20px_rgba(250,204,21,0.5)] hover:bg-primary-hover hover:scale-110 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
 };
 
 export function Footer() {
@@ -31,7 +31,7 @@ export function Footer() {
               </span>
             </a>
             <p className="text-gray-400 text-base leading-relaxed max-w-sm mb-8 font-light">
-              Je conçois des sites web professionnels sur-mesure pour les indépendants et les entreprises qui souhaitent se démarquer.
+              Je conçois la présence en ligne des coachs, consultants et experts indépendants — pour qu'on perçoive leur valeur dès la première visite.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
@@ -68,7 +68,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/2290194118320?text=Bonjour%20je%20vous%20contacte%20depuis%20votre%20site.%20J'aimerais%20r%C3%A9server%20un%20appel" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden mt-4 flex justify-center items-center px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white text-sm font-medium transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
+                <a href="https://wa.me/2290194118320?text=Bonjour%20Dylane%2C%20je%20viens%20de%20voir%20votre%20site%20et%20j'aimerais%20%C3%A9changer%20sur%20mon%20image%20en%20ligne." target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden mt-4 flex justify-center items-center px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white text-sm font-medium transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
                   <span className="flex items-center gap-2 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">
                     Réserver un appel
                   </span>

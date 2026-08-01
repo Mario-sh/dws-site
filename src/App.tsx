@@ -3,9 +3,12 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Logos } from "./components/Logos";
 import { About } from "./components/About";
+import { ForWho } from "./components/ForWho";
+import { Testimonials } from "./components/Testimonials";
 import { Services } from "./components/Services";
 import { Process } from "./components/Process";
 import { Portfolio } from "./components/Portfolio";
+import { FinalCTA } from "./components/FinalCTA";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { Footer } from "./components/Footer";
 import { LegalMentions } from "./pages/LegalMentions";
@@ -17,9 +20,12 @@ function Home() {
       <Hero />
       <Logos />
       <About />
+      <ForWho />
       <Services />
       <Process />
       <Portfolio />
+      <Testimonials />
+      <FinalCTA />
     </main>
   );
 }

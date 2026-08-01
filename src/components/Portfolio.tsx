@@ -11,7 +11,7 @@ const projects = [
       { icon: <MonitorPlay className="w-3.5 h-3.5" />, label: "Infoproduit" },
       { icon: <Sparkles className="w-3.5 h-3.5" />, label: "Animé" }
     ],
-    description: "Arc144 est une formation e-commerce premium avec une approche de communication différente: un univers visuel codé et une DA poussée, loin des standards du marché.",
+    description: "ARC144 vendait une formation e-commerce premium — avec une image qui ne le disait pas. J'ai construit un univers visuel à part, loin des codes du marché, pour que le positionnement haut de gamme se ressente avant même la page de vente.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
   },
   {
@@ -21,14 +21,14 @@ const projects = [
       { icon: <Layout className="w-3.5 h-3.5" />, label: "Dashboard" },
       { icon: <MonitorPlay className="w-3.5 h-3.5" />, label: "SaaS" },
     ],
-    description: "Une interface d'administration épurée pour les gestionnaires de données financières. Simplification des workflows complexes et dataviz.",
+    description: "Nova aide des équipes à piloter des données financières complexes. J'ai repensé l'interface pour que la clarté du produit se voie dès le premier écran — et inspire confiance avant même la démo.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
   }
 ];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
 };
 
 const staggerContainer = {
@@ -76,9 +76,9 @@ export function Portfolio() {
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="text-center mb-20">
-        <motion.h2 variants={fadeInUp} className="font-serif text-3xl md:text-4xl font-bold mb-6">Mes Dernières Réalisations</motion.h2>
+        <motion.h2 variants={fadeInUp} className="font-serif text-3xl md:text-4xl font-bold mb-6">Ils avaient l'expertise. Il leur manquait l'image.</motion.h2>
         <motion.p variants={fadeInUp} className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-          Découvrez une sélection de mes projets récents, conçus pour allier esthétique, conversion et performance.
+          Découvrez comment ces professionnels ont repris le contrôle de leur première impression.
         </motion.p>
       </div>
 
@@ -192,18 +192,18 @@ export function Portfolio() {
               <div className="flex flex-wrap gap-4 mt-auto">
                 <button className="group relative overflow-hidden flex justify-center items-center px-6 py-3 bg-transparent hover:bg-white/5 border border-white/20 hover:border-white/40 rounded-full transition-all text-sm font-medium text-white">
                   <span className="flex items-center gap-2 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">
-                    Détails du projet <ChevronRight className="w-4 h-4 text-gray-400" />
+                    Voir la transformation <ChevronRight className="w-4 h-4 text-gray-400" />
                   </span>
                   <span className="absolute flex items-center gap-2 translate-y-[150%] transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0">
-                    Détails du projet <ChevronRight className="w-4 h-4 text-white" />
+                    Voir la transformation <ChevronRight className="w-4 h-4 text-white" />
                   </span>
                 </button>
                 <button className="group relative overflow-hidden flex justify-center items-center px-6 py-3 bg-transparent hover:bg-white/5 border border-white/20 hover:border-white/40 rounded-full transition-all text-sm font-medium text-white">
                   <span className="flex items-center gap-2 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">
-                    Website live <ChevronRight className="w-4 h-4 text-gray-400" />
+                    Visiter le site <ChevronRight className="w-4 h-4 text-gray-400" />
                   </span>
                   <span className="absolute flex items-center gap-2 translate-y-[150%] transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0">
-                    Website live <ChevronRight className="w-4 h-4 text-white" />
+                    Visiter le site <ChevronRight className="w-4 h-4 text-white" />
                   </span>
                 </button>
               </div>

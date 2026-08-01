@@ -26,7 +26,7 @@ export function Navbar() {
         </nav>
         
         <div className="hidden md:flex items-center">
-          <a href="https://wa.me/2290194118320?text=Bonjour%20je%20vous%20contacte%20depuis%20votre%20site.%20J'aimerais%20en%20savoir%20plus" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex justify-center items-center px-5 py-2.5 text-sm font-medium text-black bg-primary rounded-full hover:bg-primary-hover transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(250,204,21,0.3)]">
+          <a href="https://wa.me/2290194118320?text=Bonjour%20Dylane%2C%20je%20viens%20de%20voir%20votre%20site%20et%20j'aimerais%20%C3%A9changer%20sur%20mon%20image%20en%20ligne." target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex justify-center items-center px-5 py-2.5 text-sm font-medium text-black bg-primary rounded-full hover:bg-primary-hover transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(250,204,21,0.3)]">
             <span className="flex items-center gap-2 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">
               Me contacter
             </span>
@@ -54,7 +54,7 @@ export function Navbar() {
           <a href="/#processus" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Processus</a>
           <a href="/#realisations" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Réalisations</a>
           <div className="pt-4 pb-2">
-            <a href="https://wa.me/2290194118320?text=Bonjour%20je%20vous%20contacte%20depuis%20votre%20site.%20J'aimerais%20en%20savoir%20plus" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex justify-center items-center w-full px-5 py-3 text-sm font-semibold text-black bg-primary rounded-full hover:bg-primary-hover transition-colors" onClick={() => setIsOpen(false)}>
+            <a href="https://wa.me/2290194118320?text=Bonjour%20Dylane%2C%20je%20viens%20de%20voir%20votre%20site%20et%20j'aimerais%20%C3%A9changer%20sur%20mon%20image%20en%20ligne." target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex justify-center items-center w-full px-5 py-3 text-sm font-semibold text-black bg-primary rounded-full hover:bg-primary-hover transition-colors" onClick={() => setIsOpen(false)}>
               <span className="flex items-center gap-2 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">
                 Me contacter
               </span>

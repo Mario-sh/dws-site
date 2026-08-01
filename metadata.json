@@ -1,6 +1,6 @@
 {
-  "name": "Campus Learning Platform",
-  "description": "A landing page for an online learning platform with a dark theme.",
+  "name": "DylaneWebStudio",
+  "description": "Site vitrine de DylaneWebStudio — conception de présences en ligne premium pour coachs, consultants et experts indépendants.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

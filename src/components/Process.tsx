@@ -3,7 +3,7 @@ import { PhoneCall, PenTool, Code2, Rocket } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
 };
 
 const staggerContainer = {
@@ -19,26 +19,26 @@ const staggerContainer = {
 const steps = [
   {
     number: "01",
-    title: "Découverte",
-    description: "Nous échangeons lors d'un appel stratégique pour comprendre vos objectifs, votre cible et l'essence de votre projet.",
+    title: "On parle de vous",
+    description: "Un appel pour comprendre votre métier, vos clients et l'image que vous voulez projeter. Sans jargon, sans engagement.",
     icon: <PhoneCall className="w-6 h-6 text-black" />
   },
   {
     number: "02",
-    title: "Stratégie & Design",
-    description: "Je conçois une maquette sur-mesure (UI/UX) qui reflète votre image de marque et optimise le parcours de vos futurs clients.",
+    title: "Je dessine votre image",
+    description: "Une maquette sur-mesure, alignée sur votre positionnement. Vous validez chaque direction avant la moindre ligne de code.",
     icon: <PenTool className="w-6 h-6 text-black" />
   },
   {
     number: "03",
-    title: "Développement",
-    description: "Intégration pixel-perfect avec des technologies modernes. Je m'assure que le site est rapide, sécurisé et responsive.",
+    title: "Je construis",
+    description: "Un site rapide, soigné, impeccable sur tous les écrans. Vous suivez l'avancement sans avoir à vous en occuper.",
     icon: <Code2 className="w-6 h-6 text-black" />
   },
   {
     number: "04",
-    title: "Lancement",
-    description: "Après une batterie de tests, nous mettons le site en ligne. Je vous accompagne pour sa prise en main et son évolution.",
+    title: "Vous êtes en ligne",
+    description: "Après une série de tests, votre nouvelle image est publiée. Je vous montre comment la prendre en main, et je reste là pour la suite.",
     icon: <Rocket className="w-6 h-6 text-black" />
   }
 ];
@@ -47,18 +47,19 @@ export function Process() {
   return (
     <motion.section 
       id="processus"
-      className="py-24 px-6 max-w-7xl mx-auto"
+      className="py-24 px-6 bg-bg-dark"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={staggerContainer}
     >
+      <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16 md:mb-24">
         <motion.h2 variants={fadeInUp} className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
-          Comment ça marche ?
+          Quatre étapes. Aucune complexité.
         </motion.h2>
         <motion.p variants={fadeInUp} className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-          Un processus clair et transparent, pensé pour vous libérer l'esprit et garantir un résultat à la hauteur de vos attentes.
+          Votre seule mission : parler de votre métier. Je m'occupe du reste.
         </motion.p>
       </div>
 
@@ -89,6 +90,7 @@ export function Process() {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </motion.section>
   );
