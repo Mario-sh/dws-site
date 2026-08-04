@@ -50,9 +50,9 @@ export function About() {
           <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl rounded-full"></div>
           
           <div className="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-[400px] lg:w-80 lg:h-[480px] rounded-2xl overflow-hidden shadow-2xl relative bg-bg-dark border border-white/5">
-            <img 
-              src="/dylane.jpeg" 
-              alt="Dylane - Web Designer" 
+            <img
+              src="/monapproche.jpg"
+              alt="Dylane - Web Designer"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105 filter grayscale-[30%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100"
             />
