@@ -21,7 +21,7 @@ export function Navbar() {
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
           <a href="/#" className="hover:text-primary transition-colors">Accueil</a>
           <a href="/#a-propos" className="hover:text-primary transition-colors">Mon approche</a>
-          <a href="/#services" className="hover:text-primary transition-colors">Services</a>
+          <a href="/#services" className="hover:text-primary transition-colors">Offres</a>
           <a href="/#processus" className="hover:text-primary transition-colors">Processus</a>
           <Link to="/realisations" className="hover:text-primary transition-colors">Réalisations</Link>
         </nav>
@@ -51,7 +51,7 @@ export function Navbar() {
         <div className="md:hidden absolute top-full left-0 w-full bg-bg-card border-b border-white/10 shadow-2xl py-4 px-6 flex flex-col space-y-2 animate-in slide-in-from-top-2 duration-200">
           <a href="/#" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Accueil</a>
           <a href="/#a-propos" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Mon approche</a>
-          <a href="/#services" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Services</a>
+          <a href="/#services" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Offres</a>
           <a href="/#processus" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Processus</a>
           <Link to="/realisations" className="block text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg px-4 py-3 transition-colors font-medium" onClick={() => setIsOpen(false)}>Réalisations</Link>
           <div className="pt-4 pb-2">

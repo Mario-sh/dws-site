@@ -18,7 +18,7 @@ const staggerContainer = {
 export function About() {
   return (
     <motion.section 
-      className="py-24 md:py-32 px-6 max-w-7xl mx-auto relative" 
+      className="py-24 md:py-32 px-6 max-w-7xl mx-auto relative scroll-mt-20"
       id="a-propos"
       initial="hidden"
       whileInView="visible"
@@ -26,7 +26,7 @@ export function About() {
       variants={staggerContainer}
     >
       {/* Decorative large quote mark in background */}
-      <div className="absolute -top-10 left-0 md:left-10 text-[150px] md:text-[250px] text-white/[0.03] font-serif pointer-events-none select-none leading-none">
+      <div className="hidden md:block absolute -top-10 left-0 md:left-10 text-[150px] md:text-[250px] text-white/[0.03] font-serif pointer-events-none select-none leading-none">
         "
       </div>
 

@@ -38,7 +38,7 @@ export function Testimonials() {
   return (
     <motion.section
       id="temoignages"
-      className="py-24 px-6 max-w-7xl mx-auto"
+      className="py-24 px-6 max-w-7xl mx-auto scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
@@ -62,8 +62,16 @@ export function Testimonials() {
           <motion.figure
             key={testimonial.author}
             variants={fadeInUp}
-            className="group relative bg-bg-card border border-white/5 rounded-2xl p-8 md:p-12 text-center transition-all duration-300 hover:border-primary/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-2xl p-8 md:p-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.45)] transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
           >
+            {/* Reflets liquid glass */}
+            <div aria-hidden="true" className="absolute inset-0 rounded-3xl bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.02)_35%,transparent_65%)] pointer-events-none"></div>
+            <div aria-hidden="true" className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+            <div aria-hidden="true" className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+              <div className="absolute top-0 h-full w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent -left-1/2 group-hover:left-[130%] transition-[left] duration-1000 ease-in-out"></div>
+            </div>
+
+            <div className="relative z-10">
             <div className="font-serif text-6xl leading-[0.5] text-primary/25 select-none pointer-events-none mb-6" aria-hidden="true">
               "
             </div>
@@ -92,6 +100,7 @@ export function Testimonials() {
                 <div className="text-gray-500 text-sm mt-2">{testimonial.role}</div>
               </div>
             </figcaption>
+            </div>
           </motion.figure>
         ))}
       </div>

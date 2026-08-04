@@ -45,7 +45,7 @@ export function Portfolio() {
 
   return (
     <motion.section
-      className="py-24 px-6 w-full relative overflow-hidden" id="realisations"
+      className="py-24 px-6 w-full relative overflow-hidden scroll-mt-20" id="realisations"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}

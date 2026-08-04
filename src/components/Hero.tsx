@@ -79,7 +79,7 @@ export function Hero() {
       </div>
 
       <motion.p variants={fadeInUp} className="text-gray-400 text-sm sm:text-base md:text-lg mb-8 max-w-xl mx-auto font-light leading-relaxed px-2">
-        Chaque jour, des gens vous découvrent en ligne et se font une opinion en quelques secondes. Mon travail : faire en sorte qu'elle soit à la hauteur de ce que vous valez vraiment.
+        Je crée des sites vitrines, portfolios et landing pages sur-mesure pour les coachs, consultants et experts indépendants — pour que chaque personne qui vous découvre en ligne comprenne immédiatement votre valeur.
       </motion.p>
 
       <motion.div variants={fadeInUp} className="relative flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10 w-full max-w-[280px] sm:max-w-none mx-auto relative z-20">
@@ -184,6 +184,7 @@ export function Hero() {
             className={`w-full h-full object-cover transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-50'}`}
             loop
             playsInline
+            preload="none"
             poster={workspacePoster}
           >
             <source src="https://videos.pexels.com/video-files/3163534/3163534-uhd_3840_2160_30fps.mp4" type="video/mp4" />

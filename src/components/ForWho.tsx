@@ -55,7 +55,7 @@ export function ForWho() {
   return (
     <motion.section
       id="pour-qui"
-      className="py-24 px-6 bg-bg-dark"
+      className="py-24 px-6 bg-bg-dark scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}

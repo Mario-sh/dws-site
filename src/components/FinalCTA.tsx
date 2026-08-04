@@ -20,7 +20,7 @@ export function FinalCTA() {
   return (
     <motion.section
       id="contact"
-      className="py-24 md:py-32 px-6 max-w-4xl mx-auto text-center"
+      className="py-24 md:py-32 px-6 max-w-4xl mx-auto text-center scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
