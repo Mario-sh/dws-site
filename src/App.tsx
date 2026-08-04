@@ -14,6 +14,8 @@ import { Footer } from "./components/Footer";
 import { LegalMentions } from "./pages/LegalMentions";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { Realisations } from "./pages/Realisations";
+import { Shop } from "./pages/Shop";
+import { ProductPage } from "./pages/ProductPage";
 import { NotFound } from "./pages/NotFound";
 import { ScrollToTop } from "./components/ScrollToTop";
 
@@ -43,6 +45,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/realisations" element={<Realisations />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/:slug" element={<ProductPage />} />
             <Route path="/mentions-legales" element={<LegalMentions />} />
             <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />

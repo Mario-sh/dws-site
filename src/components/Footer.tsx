@@ -55,6 +55,7 @@ export function Footer() {
               <li><Link to="/#" className="text-gray-400 hover:text-primary transition-colors inline-flex items-center gap-2 group">Accueil <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" /></Link></li>
               <li><Link to="/#a-propos" className="text-gray-400 hover:text-primary transition-colors inline-flex items-center gap-2 group">Mon approche <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" /></Link></li>
               <li><Link to="/realisations" className="text-gray-400 hover:text-primary transition-colors inline-flex items-center gap-2 group">Réalisations <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/shop" className="text-gray-400 hover:text-primary transition-colors inline-flex items-center gap-2 group">Shop <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" /></Link></li>
             </ul>
           </motion.div>
 
